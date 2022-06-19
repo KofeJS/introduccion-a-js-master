@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tarea 6</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+
+<body>
+
+    <form id="form-grupo-familiar">
+        <label>Ingrese la cantidad de integrantes</label>
+        <input id="numero-integrantes" type="number"/>
+        <button id="boton-continuar">Continuar</button>
+            <div id="integrantes">
+                <p id="cbox-trabajo" class="oculto">"Marcar la casilla si el integrante trabaja"</p>
+            </div>
+        <button id="calcular" class="oculto">Calcular</button>
+            <div id="resultados-edades" class="oculto">
+                <p class="parrafo">El integrante mayor tiene: <strong id="integrante-mayor"></strong></p>
+                <p class="parrafo">El integrante menor tiene: <strong id="integrante-menor"></strong></p>
+                <p class="parrafo">El promedio de edades es: <strong id="promedio-edades"></strong></p>
+            </div>
+            <div id="resultados-salarios" class="oculto">
+                <p></p>
+                <p class="parrafo">El mayor sueldo es de: $<strong id="salario-mayor"></strong></p>
+                <p class="parrafo">El menor sueldo es de: $<strong id="salario-menor"></strong></p>
+                <p class="parrafo">El salario anual promedio es de: $<strong id="salario-anual-promedio"></strong></p>
+                <p class="parrafo">El salario mensual promedio es de: $<strong id="salario-mensual-promedio"></strong></p>
+            </div>
+        <button type="reset" id="resetear">Resetear</button>
+    </form>
+
+    <script src="tarea-clase-6-calculos.js"></script>
+    <script src="tarea-clase-6.js"></script>
+</body>
+</html>
