@@ -24,8 +24,8 @@ $botonCalcular.onclick = function()
 
 
 document.querySelector("#ingresar").onclick = function() {
-  let $salarioAnual = Number(document.querySelector("#salario-anual-usuario").value);
-  let salarioMensual = calcularSalarioMensual($salarioAnual);
+  let salarioAnual = Number(document.querySelector("#salario-anual-usuario").value);
+  let salarioMensual = calcularSalarioMensual(salarioAnual);
 
   document.querySelector("#salario-mensual").value = salarioMensual;
 
@@ -33,7 +33,8 @@ document.querySelector("#ingresar").onclick = function() {
 }
 
 function calcularSalarioMensual(ingresoAnual) {
-  return ingresoAnual / 12;
+  const MESES_EN_UN_ANIO = 12;
+  return ingresoAnual / MESES_EN_UN_ANIO;
 }
 
 
