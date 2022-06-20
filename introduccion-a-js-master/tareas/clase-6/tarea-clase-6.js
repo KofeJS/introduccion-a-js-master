@@ -18,11 +18,11 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 
 
 document.querySelector("#boton-continuar").onclick = function() {
-    const $numeroIntegrantes = Number(document.querySelector("#numero-integrantes").value);
+    const numeroIntegrantes = Number(document.querySelector("#numero-integrantes").value);
 
     borrarIntegrantesAnteriores();
     mostrarMensajeCbox();
-    crearIntegrantes($numeroIntegrantes);
+    crearIntegrantes(numeroIntegrantes);
     mostrarBotonCalculo();
 
     return false;
@@ -31,17 +31,17 @@ document.querySelector("#boton-continuar").onclick = function() {
 document.querySelector("#calcular").onclick = function() {
     const $edades = document.querySelectorAll(".edad-integrantes");
     let edades = [];
-    for (A = 0; A < $edades.length; A++) {
-        if  ($edades[A].value > 0) {
-            edades.push(Number($edades[A].value));
+    for (let i = 0; i < $edades.length; i++) {
+        if  ($edades[i].value > 0) {
+            edades.push(Number($edades[i].value));
         }
     }
 
     const $salarios = document.querySelectorAll(".salario");
     let salarios = [];
-    for (A = 0; A < $salarios.length; A++) {
-        if  ($salarios[A].value > 0) {
-            salarios.push(Number($salarios[A].value)); 
+    for (let i = 0; i < $salarios.length; i++) {
+        if  ($salarios[i].value > 0) {
+            salarios.push(Number($salarios[i].value)); 
         }
     }
 
@@ -63,13 +63,13 @@ document.querySelector("#resetear").onclick = function() {
 
 
 
-function crearIntegrantes(limite) {
-    for (A = 1; A <= limite; A++) {
+function crearIntegrantes(limiteIntegrantes) {
+    for (let i = 1; i <= limiteIntegrantes; i++) {
         const $div = document.createElement("div");
         $div.className = "div-integrante";
 
         const $labels = document.createElement("label");
-        $labels.textContent = `Edad del integrante ${A}:`;
+        $labels.textContent = `Edad del integrante ${i}:`;
         const $inputs = document.createElement("input");
         $inputs.className = "edad-integrantes";
         $inputs.type = "number";
@@ -95,37 +95,37 @@ function crearIntegrantes(limite) {
 
 function borrarIntegrantesAnteriores() {
     const $integrantes = document.querySelectorAll(".div-integrante");
-    for (A = 0; A < $integrantes.length; A++) {
-        $integrantes[A].remove();
+    for (let i = 0; i < $integrantes.length; i++) {
+        $integrantes[i].remove();
     }
 }
 
 
 
 function calculosEdades(edades) {
-    document.querySelector("#integrante-mayor").innerText = calcularMayor(edades);
-    document.querySelector("#integrante-menor").innerText = calcularMenor(edades);
-    document.querySelector("#promedio-edades").innerText = calcularPromedio(edades);
+    document.querySelector("#integrante-mayor").innerText = calcularNumeroMayor(edades);
+    document.querySelector("#integrante-menor").innerText = calcularNumeroMenor(edades);
+    document.querySelector("#promedio-edades").innerText = calcularPromedioNumeros(edades);
     mostrarResultadosEdades();
 }
 
 function calculosSalarios(salarios) {
-    document.querySelector("#salario-mayor").innerText = calcularMayor(salarios);
-    document.querySelector("#salario-menor").innerText = calcularMenor(salarios);
-    document.querySelector("#salario-anual-promedio").innerText = calcularPromedio(salarios);
+    document.querySelector("#salario-mayor").innerText = calcularNumeroMayor(salarios);
+    document.querySelector("#salario-menor").innerText = calcularNumeroMenor(salarios);
+    document.querySelector("#salario-anual-promedio").innerText = calcularPromedioNumeros(salarios);
     document.querySelector("#salario-mensual-promedio").innerText = calcularSalarioMensualPromedio(salarios);
     mostrarResultadosSalarios()
 }
 
 
 
-function mostrarInputSalario(cbox, input) {
-    cbox.checked ? input.className = "salario" : input.className = "oculto";
+function mostrarInputSalario($cbox, $input) {
+    $cbox.checked ? $input.className = "salario" : $input.className = "oculto";
 }
 
 function mostrarBotonCalculo() {
-    const $numeroIntegrantes = Number(document.querySelector("#numero-integrantes").value);
-    if ($numeroIntegrantes === 0) {
+    const numeroIntegrantes = Number(document.querySelector("#numero-integrantes").value);
+    if (numeroIntegrantes === 0) {
         document.querySelector("#calcular").className = "oculto";
     } else {
         document.querySelector("#calcular").className = "";
@@ -133,8 +133,8 @@ function mostrarBotonCalculo() {
 }
 
 function mostrarMensajeCbox() {
-    const $numeroIntegrantes = Number(document.querySelector("#numero-integrantes").value);
-    if ($numeroIntegrantes === 0) {
+    const numeroIntegrantes = Number(document.querySelector("#numero-integrantes").value);
+    if (numeroIntegrantes === 0) {
         document.querySelector("#cbox-trabajo").className = "oculto";
     } else {
         document.querySelector("#cbox-trabajo").className = "parrafo";    
