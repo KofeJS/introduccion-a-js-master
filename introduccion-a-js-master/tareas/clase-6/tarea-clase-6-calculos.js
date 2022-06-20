@@ -1,17 +1,17 @@
-let calcularMayor = function(numerosArray) {
+let calcularNumeroMayor = function(numerosArray) {
     numeroMayor = Math.max(...numerosArray);
     return numeroMayor;
 }
 
-let calcularMenor = function(numerosArray) {
+let calcularNumeroMenor = function(numerosArray) {
    numeroMenor = Math.min(...numerosArray);
    return numeroMenor;
 }
 
-let calcularPromedio = function(numerosArray) {
+let calcularPromedioNumeros = function(numerosArray) {
     let promedioNumeros = 0;
-        for (A = 0; A < numerosArray.length; A++) {
-            promedioNumeros = promedioNumeros + Number(numerosArray[A]);
+        for (let i = 0; i < numerosArray.length; i++) {
+            promedioNumeros = promedioNumeros + Number(numerosArray[i]);
         }
     promedioNumeros = promedioNumeros / numerosArray.length;
 
@@ -19,12 +19,13 @@ let calcularPromedio = function(numerosArray) {
 }
 
 function calcularSalarioMensualPromedio(salarioAnualIntegrantes) {
+    const MESES_POR_ANIO = 12;
     let salarioMensualPromedio = 0;
-        for (A = 0; A < salarioAnualIntegrantes.length; A++) {
-            salarioMensualPromedio = salarioMensualPromedio + Number(salarioAnualIntegrantes[A]);
+        for (let i = 0; i < salarioAnualIntegrantes.length; i++) {
+            salarioMensualPromedio = salarioMensualPromedio + Number(salarioAnualIntegrantes[i]);
         }
     salarioMensualPromedio = salarioMensualPromedio / salarioAnualIntegrantes.length;
-    salarioMensualPromedio = salarioMensualPromedio / 12;
+    salarioMensualPromedio = salarioMensualPromedio / MESES_POR_ANIO;
 
     return salarioMensualPromedio;
 }
