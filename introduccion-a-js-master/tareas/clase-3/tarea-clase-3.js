@@ -24,12 +24,13 @@ if (nombreDeUsuario === null || nombreDeUsuario.trim().length === 0) {
 // Hacerle saber si tiene más, menos ó la misma edad que nosotros.
 
 const edadDelUsuario = Number(prompt("Cuántos años tenés?"));
+const MI_EDAD = 18;
 
-if (edadDelUsuario === 18) {
+if (edadDelUsuario === MI_EDAD) {
     console.log(`${nombreDeUsuario}, tenemos la misma edad!`);
-} else if (edadDelUsuario > 18) {
+} else if (edadDelUsuario > MI_EDAD) {
     console.log(`${edadDelUsuario}? Sos mayor que yo`);
-} else if (edadDelUsuario < 18) {
+} else if (edadDelUsuario < MI_EDAD) {
     console.log(`${edadDelUsuario}? Sos menor que yo`);
 } else {
     console.log("Perdón, no entendí la respuesta");
@@ -51,15 +52,15 @@ function procesarEntradaAlBar() {
 
     if (documentacionUsuario === null) {
         console.log("Por favor, ingrese Si o No");
-        return
+        return;
     }
 
     let respuestaDocumentacionMinuscula = documentacionUsuario.toLowerCase().trim();
-    const mayoriaEdad = 18;
+    const MAYORIA_EDAD = 18;
 
     if (respuestaDocumentacionMinuscula === "si") {
         const edadDelUsuario = Number(prompt("Cuántos años tiene?"));
-        if (edadDelUsuario < mayoriaEdad) {
+        if (edadDelUsuario < MAYORIA_EDAD) {
             console.log("Perdón pero no puede pasar, es menor de 18");
         } else {
             console.log("Bienvenido al Bar");
