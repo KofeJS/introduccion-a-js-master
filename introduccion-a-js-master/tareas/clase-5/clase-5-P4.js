@@ -9,7 +9,7 @@
 let numerosDeLaListaArray = [];
 let crearArrayDeNumeros = function() {
     let $numerosDeLaLista = document.querySelectorAll("li");
-        for (i = 0; i < $numerosDeLaLista.length; i++) {
+        for (let i = 0; i < $numerosDeLaLista.length; i++) {
             numerosDeLaListaArray.push(Number($numerosDeLaLista[i].innerText));
         }
 }
@@ -18,7 +18,7 @@ crearArrayDeNumeros();
 
 let calcularPromedioNumeros = function() {
     let promedioNumeros = 0;
-        for (i = 0; i < numerosDeLaListaArray.length; i++) {
+        for (let i = 0; i < numerosDeLaListaArray.length; i++) {
             promedioNumeros = promedioNumeros + Number(numerosDeLaListaArray[i]);
         }
     promedioNumeros = promedioNumeros / numerosDeLaListaArray.length;
@@ -47,7 +47,7 @@ let calcularNumeroRepetido = function() {
     numerosDeLaListaArray.forEach(function(value) {
         let repeticiones = [];
 
-        for (i = 0; i < numerosDeLaListaArray.length; i++) {
+        for (let i = 0; i < numerosDeLaListaArray.length; i++) {
             if (numerosDeLaListaArray[i] === value && !numeroRepetido.includes(value)) {
                 repeticiones.push(value);
             }
