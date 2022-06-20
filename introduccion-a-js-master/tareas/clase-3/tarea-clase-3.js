@@ -11,8 +11,8 @@ let nombreDeUsuario = prompt("Hola! como te llamás?");
 
 if (nombreDeUsuario === null || nombreDeUsuario.trim().length === 0) {
         console.log("No ingresaste un nombre");
-    } else if (nombreDeUsuario.toLowerCase().trim() === "joe") {
-        console.log(`Hola ${nombreDeUsuario.trim()}, te llamas igual que EconomicJoe`);
+    } else if (nombreDeUsuario.toLowerCase().trim() === "santiago") {
+        console.log(`Hola ${nombreDeUsuario.trim()}, te llamas igual que mi hermano`);
     } else if (nombreDeUsuario.toLowerCase().trim() === "leandro") {
         console.log(`Hola! yo también me llamo ${nombreDeUsuario.trim()}`);
     } else {
@@ -44,30 +44,26 @@ if (edadDelUsuario === 18) {
 // Si no entendemos la respuesta, le decimos que no entendimos la respuesta.
 // Punto bonus: SI, NO, Si, No, si, no.
 
-let documentacionUsuario = prompt("Poseés documentación? Responder con Si/No")
 
-function entradaAlBar(respuesta) {
-    
-    if (respuesta === null) {
-        console.log("Perdón, no entendí la respuesta"); return
-    }
+function procesarEntradaAlBar() {
 
-    let respuestaMinuscula = respuesta.toLowerCase().trim()
-    
-    if (respuestaMinuscula === "si") {
+    let documentacionUsuario = prompt("Poseés documentación? Responder con Si/No");
+    let respuestaDocumentaconMinuscula = documentacionUsuario.toLowerCase().trim();
+    const mayoriaEdad = 18;
+
+    if (respuestaDocumentaconMinuscula === "si") {
         const edadDelUsuario = Number(prompt("Cuántos años tiene?"));
-        if (edadDelUsuario < 18) {
+        if (edadDelUsuario < mayoriaEdad) {
             console.log("Perdón pero no puede pasar, es menor de 18");
         } else {
             console.log("Bienvenido al Bar");
         }
 
-    } else if (respuestaMinuscula === "no") {
+    } else if (respuestaDocumentaconMinuscula === "no") {
         console.log("No puedes entrar al Bar sin documentación");
-
     } else {
         console.log("Perdón, no entendí la respuesta. Responda Si o No");
-    }
+    }  
 }
 
-console.log(entradaAlBar(documentacionUsuario))
+console.log(procesarEntradaAlBar())
