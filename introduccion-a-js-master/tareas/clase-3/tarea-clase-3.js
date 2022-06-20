@@ -48,10 +48,16 @@ if (edadDelUsuario === 18) {
 function procesarEntradaAlBar() {
 
     let documentacionUsuario = prompt("Poseés documentación? Responder con Si/No");
-    let respuestaDocumentaconMinuscula = documentacionUsuario.toLowerCase().trim();
+
+    if (documentacionUsuario === null) {
+        console.log("Por favor, ingrese Si o No");
+        return
+    }
+
+    let respuestaDocumentacionMinuscula = documentacionUsuario.toLowerCase().trim();
     const mayoriaEdad = 18;
 
-    if (respuestaDocumentaconMinuscula === "si") {
+    if (respuestaDocumentacionMinuscula === "si") {
         const edadDelUsuario = Number(prompt("Cuántos años tiene?"));
         if (edadDelUsuario < mayoriaEdad) {
             console.log("Perdón pero no puede pasar, es menor de 18");
@@ -59,7 +65,7 @@ function procesarEntradaAlBar() {
             console.log("Bienvenido al Bar");
         }
 
-    } else if (respuestaDocumentaconMinuscula === "no") {
+    } else if (respuestaDocumentacionMinuscula === "no") {
         console.log("No puedes entrar al Bar sin documentación");
     } else {
         console.log("Perdón, no entendí la respuesta. Responda Si o No");
