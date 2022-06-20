@@ -1,7 +1,7 @@
 // TAREA: Imprimí cada 3er número del 3 al 22 usando un 'bucle for'.
 
-for (let A = 3; A < 22; A = A + 3) {
-    console.log(A);
+for (let i = 3; i < 22; i = i + 3) {
+    console.log(i);
 }
 
 // TAREA: Usando un bucle 'while', decile a tu computadora que registre los números de
@@ -26,32 +26,34 @@ while (numeroInicio > 0) {
 // 16% 4 = 0 - en 16 tenemos 4 * 4
 // 19% 4 = 3 - en 19 tenemos 4 * 4 + 3, etc.
 
-for (let A = 1; A <= 50; A++) {
+for (let i = 1; i <= 50; i++) {
     
-    if (A % 3 === 0 && A % 5 === 0) {
-            console.log(`(${A}) FizzBuzz!`);
-    } else if (A % 3 === 0) {
-            console.log(`(${A}) Fizz!`);
-    } else if (A % 5 === 0) {
-            console.log(`(${A}) Buzz!`);
+    if (i % 3 === 0 && i % 5 === 0) {
+            console.log(`(${i}) FizzBuzz!`);
+    } else if (i % 3 === 0) {
+            console.log(`(${i}) Fizz!`);
+    } else if (i % 5 === 0) {
+            console.log(`(${i}) Buzz!`);
     } else {
-        console.log(A);
+        console.log(i);
     }
 }
 
 // Calcular el promedio de todos los números en un array de números. (y ponerlo en una función)
 // ej.: calcularPromedio([10,5,4,2,8])
 
-const numerosDePromedio = [19, 11, 5, 5, 4, 6];
+const numerosAPromediar = [19, 11, 5, 5, 4, 6];
 
-function calcularPromedio (datosInsertados) {
+function calcularPromedio (numerosArray) {
     let resultado = 0;
 
-    for (let A = 0; A < datosInsertados.length; A++) {
-        resultado = resultado + datosInsertados[A];
+    for (let i = 0; i < numerosArray.length; i++) {
+        resultado = resultado + numerosArray[i];
     }
+
+    resultado = resultado / numerosArray.length
     
     console.log(`El promedio es ${resultado}`);
 }
 
-console.log(calcularPromedio(numerosDePromedio));
+console.log(calcularPromedio(numerosAPromediar));
