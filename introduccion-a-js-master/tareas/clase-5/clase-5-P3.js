@@ -17,11 +17,11 @@ document.querySelector("#calcular").onclick = function() {
     
     let sumaTiempo = [0, 0, 0]
     //Suma de las horas, minutos y segundos de los videos
-    for (A = 0; A < arrayDatosTiempo.length; A++) {
-        let datoSumaTiempo = arrayDatosTiempo[A];
+    for (let i = 0; i < arrayDatosTiempo.length; i++) {
+        let datoSumaTiempo = arrayDatosTiempo[i];
         
-        for (B = 0; B < datoSumaTiempo.length; B++) {
-            sumaTiempo[A] = sumaTiempo[A] + Number(datoSumaTiempo[B].value);
+        for (let j = 0; j < datoSumaTiempo.length; j++) {
+            sumaTiempo[i] = sumaTiempo[i] + Number(datoSumaTiempo[j].value);
         }
     }
     //Redondeo de las unidades de horas, minutos y segundos
@@ -35,7 +35,9 @@ document.querySelector("#calcular").onclick = function() {
         sumaTiempo[1] = sumaTiempo[1] - (60 * Math.floor((sumaTiempo[1] / 60)));
     }
 
-    document.querySelector("#resultado").innerText = `Duración de las clases: ${sumaTiempo[0]}° ${sumaTiempo[1]}' ${sumaTiempo[2]}''`
+    document.querySelector("#horas").innerText = `${sumaTiempo[0]}hs`;
+    document.querySelector("#minutos").innerText = `${sumaTiempo[1]}min`;
+    document.querySelector("#segundos").innerText = `${sumaTiempo[2]}seg`;
     
     return false;
 }

@@ -17,23 +17,23 @@ console.log('Tenés ' + calcularEdad(anioActual, anioNacimiento) + ' años');
 // diario... semanal, por hora. etc.
 
 function calcularSalarioAnual(salarioMensual) {
-    const cantidadMesesEnUnAnio = 12;
-    return salarioMensual * cantidadMesesEnUnAnio;
+    const MESES_EN_UN_ANIO = 12;
+    return salarioMensual * MESES_EN_UN_ANIO;
 }
 
 function calcularSalarioMensual(salarioAnual) {
-    const cantidadMesesEnUnAnio = 12;
-    return salarioAnual / cantidadMesesEnUnAnio;
+    const MESES_EN_UN_ANIO = 12;
+    return salarioAnual / MESES_EN_UN_ANIO;
 }
 
 function calcularSalarioSemanal(salarioAnual) {
-    const cantidadSemanasEnUnAnio = 52;
-    return salarioAnual / cantidadSemanasEnUnAnio;
+    const SEMANAS_POR_ANIO = 52;
+    return salarioAnual / SEMANAS_POR_ANIO;
 }
 
 function calcularSalarioDiario(salarioAnual) {
-    const cantidadDiasEnUnAnio = 365;
-    return salarioAnual / cantidadDiasEnUnAnio;
+    const DIAS_POR_ANIO = 365;
+    return salarioAnual / DIAS_POR_ANIO;
 }
 
 const salarioMensual = Number(prompt('Cuál es tu salario mensual?'));

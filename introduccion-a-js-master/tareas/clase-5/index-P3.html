@@ -12,32 +12,38 @@
     <form id="cursos">
         <ul>
             <li id="clase-1">
+                <label >Clase 1</label>
                 <input class="horas" type="number" placeholder="Horas"/>
                 <input class="minutos" type="number" placeholder="Minutos"/>
                 <input class="segundos" type="number" placeholder="Segundos"/>
             </li><li>
+                <label >Clase 2</label>
                 <input class="horas" type="number" placeholder="Horas"/>
                 <input class="minutos" type="number" placeholder="Minutos"/>
                 <input class="segundos" type="number" placeholder="Segundos"/>
             </li><li>
+                <label >Clase 3</label>
                 <input class="horas" type="number" placeholder="Horas"/>
                 <input class="minutos" type="number" placeholder="Minutos"/>
                 <input class="segundos" type="number" placeholder="Segundos"/>
             </li><li>
+                <label >Clase 4</label>
                 <input class="horas" type="number" placeholder="Horas"/>
                 <input class="minutos" type="number" placeholder="Minutos"/>
                 <input class="segundos" type="number" placeholder="Segundos"/>
             </li><li>
+                <label >Clase 5</label>
                 <input class="horas" type="number" placeholder="Horas"/>
                 <input class="minutos" type="number" placeholder="Minutos"/>
                 <input class="segundos" type="number" placeholder="Segundos"/>
             </li>
         </ul>
+        
+        <button type="submit" id="calcular">Calcular</button>
+        <button type="reset">Limpiar</button>
     </form>
 
-    <button type="reset" form="cursos">Limpiar</button>
-    <button type="submit" form="cursos" id="calcular">Calcular</button>
-    <div id="resultado">Resultado</div>
+    <div>Duración de las clases: <strong id="horas"></strong> <strong id="minutos"></strong> <strong id="segundos"></strong></div>
     
     <script src='clase-5-P3.js'></script>
 </body>
