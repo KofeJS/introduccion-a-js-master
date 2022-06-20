@@ -17,10 +17,10 @@ document.querySelector("#calcular").onclick = function() {
     
     let sumaTiempo = [0, 0, 0]
     //Suma de las horas, minutos y segundos de los videos
-    for (i = 0; i < arrayDatosTiempo.length; i++) {
+    for (let i = 0; i < arrayDatosTiempo.length; i++) {
         let datoSumaTiempo = arrayDatosTiempo[i];
         
-        for (j = 0; j < datoSumaTiempo.length; j++) {
+        for (let j = 0; j < datoSumaTiempo.length; j++) {
             sumaTiempo[i] = sumaTiempo[i] + Number(datoSumaTiempo[j].value);
         }
     }
